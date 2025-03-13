@@ -1,0 +1,23 @@
+{
+    "version": 1,
+    "author": "Uri Shaked",
+    "editor": "wokwi",
+    "parts": [
+      { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 4.7, "left": 4.6, "attrs": {} },
+      { "type": "wokwi-hc-sr04", "id": "ultrasonic1", "top": 1.5, "left": 178.3, "attrs": {} }
+    ],
+    "connections": [
+      [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+      [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+      [ "ultrasonic1:VCC", "esp:VIN", "red", [ "v115.2", "h-259.2", "v-52.7" ] ],
+      [ "ultrasonic1:TRIG", "esp:D5", "green", [ "v19.2", "h-106", "v-23.9" ] ],
+      [
+        "ultrasonic1:ECHO",
+        "esp:D18",
+        "green",
+        [ "v38.4", "h-125.6", "v-28.8", "h-19.2", "v-23.9" ]
+      ],
+      [ "ultrasonic1:GND", "esp:GND.1", "black", [ "v0" ] ]
+    ],
+    "dependencies": {}
+  }
